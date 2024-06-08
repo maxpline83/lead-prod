@@ -1,15 +1,14 @@
 name: CI
 
 on:
-  push:
-  pull_request:
+  [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Echo Hello, World!
+      - name: Echo Hello, World!
         run: echo "Hello, World!"
 
   build:
@@ -22,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'  # You can specify the Python version you need
+          python-version: '3.9'  # Specify the desired Python version
 
       - name: Install dependencies
         run: |
@@ -32,4 +31,3 @@ jobs:
       - name: Run basic python code
         run: |
           python -c "print('Hello, World!')"
-          
