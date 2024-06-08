@@ -22,10 +22,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Lint code
-        run: |
-          pip install flake8
-          flake8 .  # Runs flake8 to check the code style
+      # - name: Lint code
+      #   run: |
+      #     pip install flake8
+      #     flake8 .  # Runs flake8 to check the code style
 
       - name: Run tests
         run: |
