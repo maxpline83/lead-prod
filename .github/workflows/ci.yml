@@ -32,11 +32,31 @@ jobs:
         run: |
           python -c "print('Hello, World!')"
 
+  flake8:
+    runs-on: ubuntu-latest
+    needs: dependencies
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run flake8
+        run: flake8 .
+
   final-job:
     runs-on: ubuntu-latest
     needs: 
       - test
       - build
+      - flake8
 
     steps:
       - name: Echo All Jobs Done
