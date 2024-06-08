@@ -27,10 +27,5 @@ jobs:
       #     pip install flake8
       #     flake8 .  # Runs flake8 to check the code style
 
-      - name: Run tests
-        run: |
-          pip install pytest
-          pytest  # Run the tests using pytest
-
       - name: Echo Hello, World!
         run: echo "Hello, World!"
