@@ -34,8 +34,7 @@ jobs:
 
   flake8:
     runs-on: ubuntu-latest
-    needs: dependencies
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
