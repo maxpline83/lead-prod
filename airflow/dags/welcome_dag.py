@@ -4,16 +4,20 @@ from airflow.utils.dates import days_ago
 from datetime import datetime
 import requests
 
+
 def print_welcome():
     print('Welcome to Airflow!')
 
+
 def print_date():
     print('Today is {}'.format(datetime.today().date()))
+
 
 def print_random_quote():
     response = requests.get('https://api.quotable.io/random')
     quote = response.json()['content']
     print('Quote of the day: "{}"'.format(quote))
+
 
 dag = DAG(
     'welcome_dag',
